@@ -9,7 +9,6 @@ const Courses = () => {
         <div  >
             <Container>
                 <Row md={2}>
-
                         {
                             courses?.map(course=> <CourseCart 
                                 key={course.id}

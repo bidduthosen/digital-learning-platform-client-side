@@ -18,9 +18,7 @@ const Header = () => {
             <Link className='me-2 nav-link' to="/course"> FAQ</Link>
             <Link className='me-2 nav-link' to="/blog">Blog</Link>
           </Nav>
-          <Nav className="">
-            <Button>Login</Button>
-          </Nav>
+            <Link to='/login'><Button style={{background: '#a6b7a9ad', color: 'black'}}>Login</Button></Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>

@@ -9,6 +9,8 @@ const CourseDetails = () => {
         <div>
             <h1>{allCourse.name}</h1>
             <Image src={allCourse.picture}></Image>
+            <p>{allCourse.about}</p>
+            <p>{allCourse.author.name}</p>
         </div>
     );
 };
