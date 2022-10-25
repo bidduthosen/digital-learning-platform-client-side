@@ -11,7 +11,7 @@ const Courses = () => {
                 <Row md={2}>
 
                         {
-                            courses.map(course=> <CourseCart 
+                            courses?.map(course=> <CourseCart 
                                 key={course.id}
                                 course={course}
                             ></CourseCart>)

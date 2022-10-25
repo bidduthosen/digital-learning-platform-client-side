@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './LeftSiteNav.css'
 
 const LeftSiteNav = () => {
     const [courses, setCourses] = useState([]);
@@ -12,10 +13,10 @@ const LeftSiteNav = () => {
     }, [])
 
     return (
-        <div>
-            <h4>Course List</h4>
+        <div className='py-3'>
+            <h3 style={{textAlign: 'center', paddingBottom: '15px'}}>Course List</h3>
             {
-                courses.map(course=> <p key={course.id}><Link to={`/course/${course.id}`}>{course.name}</Link></p>)
+                courses?.map(course=> <p className='courses-info' key={course.id}><Link className='courses-link'  to={`/course/${course.id}`}>{course.name}</Link></p>)
             }
         </div>
     );

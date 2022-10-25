@@ -1,0 +1,15 @@
+.courses-info{
+    background-color: rgb(166 183 169 / 68%);
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+}
+.courses-link{
+    text-decoration: none;
+    color: black;
+}
+.courses-info:hover{
+    border-radius: 20px;
+    background-color: rgb(166 183 169 / 100%);
+    transition: 0.05s;
+}

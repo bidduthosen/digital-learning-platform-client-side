@@ -1,0 +1,10 @@
+.nav-link{
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+}
+.nav-link:hover{
+    background: #dce2d5b3;
+    transition: 00.05s;
+    border-radius: 5px;
+}
