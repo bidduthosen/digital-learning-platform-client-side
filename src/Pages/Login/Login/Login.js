@@ -17,7 +17,7 @@ const Login = () => {
                     <LoginBanner></LoginBanner>
                 </Col>
                 <Col md='6'>
-                    <h2>Sign In Your Account</h2>
+                    <h3 className='mb-5 fs-bold'>Sign In Your Account</h3>
                     <Form>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                           <Form.Label>Email address</Form.Label>
@@ -38,12 +38,13 @@ const Login = () => {
                     <br />
                     <hr />
                     <br />
-                    <div className="d-grid gap-2 mb-5">
+                    <div className=" mb-5">
+                            <p className='text-center'>Or sign in with</p>
                         <div className='text-center'>
-                            <p>Or sign in with</p>
+                        <Button variant="outline-success m-2 px-2" ><FaGoogle/> Login Via Google</Button>
+                        <Button variant="outline-dark px-2"><FaFacebook/> Login Via Facebook</Button>
+
                         </div>
-                        <Button variant="outline-success" size="lg"><FaGoogle/> Login Via Google</Button>
-                        <Button variant="outline-dark" size="lg"><FaFacebook/> Login Via Facebook</Button>
                         <p className='text-center my-4'><small>New User ? <Link to='/register'>Create an Account</Link></small></p>
                     </div>
                 </Col>
