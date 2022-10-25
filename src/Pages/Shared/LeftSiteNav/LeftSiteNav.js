@@ -13,7 +13,7 @@ const LeftSiteNav = () => {
 
     return (
         <div>
-            <h3>Course : {courses.length}</h3>
+            <h4>Course List</h4>
             {
                 courses.map(course=> <p key={course.id}><Link to={`/course/${course.id}`}>{course.name}</Link></p>)
             }

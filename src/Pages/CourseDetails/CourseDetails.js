@@ -1,9 +1,14 @@
 import React from 'react';
+import { Image } from 'react-bootstrap';
+import { useLoaderData } from 'react-router-dom';
 
 const CourseDetails = () => {
+    const allCourse = useLoaderData();
+    console.log(allCourse)
     return (
         <div>
-            <h1>course details</h1>
+            <h1>{allCourse.name}</h1>
+            <Image src={allCourse.picture}></Image>
         </div>
     );
 };

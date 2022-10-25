@@ -6,14 +6,14 @@ import LeftSiteNav from '../Pages/Shared/LeftSiteNav/LeftSiteNav';
 
 const Main = () => {
     return (
-        <div>
+        <div style={{background: 'rgba(27, 41, 80, 0.05)'}}>
             <Header></Header>
             <Container>
                 <Row>
-                    <Col md='4'>
+                    <Col md='3 bg-success bg-opacity-25'>
                         <LeftSiteNav></LeftSiteNav>
                     </Col>
-                    <Col md='8'><Outlet></Outlet></Col>
+                    <Col md='9'><Outlet></Outlet></Col>
                 </Row>
             </Container>
         </div>

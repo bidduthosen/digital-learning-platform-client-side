@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="light" expand="lg" className='mb-4'>
       <Container>
         <Navbar.Brand className='fs-2 fw-bold'>Digital learning platform</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
