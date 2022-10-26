@@ -1,4 +1,4 @@
-import { GoogleAuthProvider } from 'firebase/auth';
+import { FacebookAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
@@ -14,8 +14,10 @@ import './Login.css';
 
 
 const Login = () => {
-    const {signInPassword, SignIinGoogle} = useContext(AuthContext);
+    const {signInPassword, signIinGoogle, signInFacebook} = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
+    const facebookProvider = new FacebookAuthProvider();
+
     const [userError, setUserError] = useState('');
     const [accepted, setAccepted] = useState(false);
     const navigate = useNavigate();
@@ -43,13 +45,25 @@ const Login = () => {
     }
 
     const handleSignInGoogle = () =>{
-        SignIinGoogle(googleProvider)
+        signIinGoogle(googleProvider)
             .then((result)=>{
                 const user = result.user;
                 console.log(user);
             })
             .catch((error)=> console.error(error))
     };
+
+    const handleSignInFacebook = () =>{
+        signInFacebook(facebookProvider)
+            .then((result)=>{
+                const user = result.user;
+                console.log(user);
+            })
+            .catch((error)=>{
+                console.error(error);
+                setUserError(error.message);
+            })
+    }
 
     const handleAcceptTerms = event =>{
         setAccepted(event.target.checked)
@@ -88,7 +102,7 @@ const Login = () => {
                             <p className='text-center'>Or sign in with</p>
                         <div className='text-center'>
                         <Button onClick={handleSignInGoogle} variant="outline-success m-2 px-2" ><FaGoogle/> Login Via Google</Button>
-                        <Button variant="outline-dark px-2"><FaFacebook/> Login Via Facebook</Button>
+                        <Button onClick={handleSignInFacebook} variant="outline-dark px-2"><FaFacebook/> Login Via Facebook</Button>
 
                         </div>
                         <p className='text-center my-4'><small>New User ? <Link to='/register'>Create an Account</Link></small></p>

@@ -8,25 +8,36 @@ const auth = getAuth(app)
 export const AuthContext = createContext();
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
+    const [loader , setLoader] = useState(true);
 
 
     // createPassword-----
     const createPassword =(email, password)=>{
+        setLoader(true);
         return createUserWithEmailAndPassword(auth, email, password);
     };
 
     // signInWithEmailAndPassword
     const signInPassword = (email, password) =>{
+        setLoader(true);
         return signInWithEmailAndPassword(auth, email, password);
     };
 
     // signInWithPopup------
-    const SignIinGoogle = (Provider) =>{
+    const signIinGoogle = (Provider) =>{
+        setLoader(true);
         return signInWithPopup(auth, Provider);
     };
 
+    // signInFacebook---
+    const signInFacebook = (Provider) =>{
+        setLoader(true);
+        return signInWithPopup(auth, Provider);
+    }
+
     // logout
     const logOut = ()=>{
+        setLoader(true);
         return signOut(auth);
     }
 
@@ -36,14 +47,17 @@ const AuthProvider = ({children}) => {
         const unSubscribe = onAuthStateChanged(auth, currentUser=>{
             console.log("state change", currentUser);
             setUser(currentUser);
+            setLoader(false)
         })
         return ()=> unSubscribe();
     }, []);
     
 
     const value = {
-        user, 
-        SignIinGoogle,
+        user,
+        loader,
+        signIinGoogle,
+        signInFacebook,
         logOut,
         createPassword,
         signInPassword

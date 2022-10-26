@@ -8,7 +8,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 
 const CourseDetails = () => {
     const allCourse = useLoaderData();
-    const {course_name, about, author, lesson, class_time, course_free} = allCourse;
+    const {id, course_name, about, author, lesson, class_time, course_free} = allCourse;
     return (
         <Container className='my-3'>
             <Card>
@@ -37,7 +37,7 @@ const CourseDetails = () => {
                 <Card.Body>
                   <Card.Title className='text-primary fs-2'>{course_name}</Card.Title>
                   <Card.Text>{about}</Card.Text>
-                  <Button variant="outline-info"><Link to='/premium' style={{textDecoration:"none", color: 'black'}}> ,<FaLock></FaLock> Get premium access</Link></Button>
+                  <Button variant="outline-info"><Link to={`/premium/${id}`} style={{textDecoration:"none", color: 'black'}}> ,<FaLock></FaLock> Get premium access</Link></Button>
                 </Card.Body>
             </Card>
         </Container>
