@@ -14,7 +14,7 @@ import './Header.css';
 
 const Header = () => {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="white" variant="white mb-4">
+        <Navbar collapseOnSelect expand="lg" style={{background: "#ebd6a6"}} variant="white mb-4">
             <Container>
               <Navbar.Brand href="#home" className='fs-1 fw-bold'><FaLaptopCode style={{fontSize: '55px'}}/> Digital learning platform</Navbar.Brand>
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -25,7 +25,8 @@ const Header = () => {
                   <Link className='me-2 nav-link' to="/blog">Blog</Link>
                 </Nav>
                 <Nav>
-                <Link  to='/login'><Button style={{background: '#a6b7a9ad', color: 'black', textAlign: 'center'}}>Login</Button></Link>
+                <Link  to='/login'><Button variant="outline-dark m-2">Login</Button></Link>
+                <Link  to='/register'><Button variant="outline-dark m-2">Register</Button></Link>
                   {/* <Nav.Link eventKey={2} href={`/login`}>Dank memes</Nav.Link> */}
                 </Nav>
               </Navbar.Collapse>

@@ -6,8 +6,8 @@ const LoginBanner = () => {
     return (
         <div className='login-banner-img'>
             <Image src='https://i.ibb.co/LzV6djC/login-img.png" '></Image>
-            <h2>Welcome To</h2>
-            <h2>Digital learning Courses</h2>
+            <h2 className='fst-italic'>Welcome To</h2>
+            <h2 className='fst-italic'>Digital learning Courses</h2>
             <div>
             <Carousel className='mt-5'>
                 <Carousel.Item>

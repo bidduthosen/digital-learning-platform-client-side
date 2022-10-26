@@ -16,8 +16,8 @@ const Login = () => {
                 <Col md='6'>
                     <LoginBanner></LoginBanner>
                 </Col>
-                <Col md='6'>
-                    <h3 className='mb-5 fs-bold'>Sign In Your Account</h3>
+                <Col md='6' style={{boxShadow: "rgb(136 136 136 / 46%) 0px -1px 4px 1px"}}>
+                    <h3 className='my-3 fs-bold fst-italic'>Sign In Your Account</h3>
                     <Form>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                           <Form.Label>Email address</Form.Label>
@@ -29,7 +29,7 @@ const Login = () => {
                           <Form.Control type="password" name='password' placeholder="Password" required/>
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                          <Form.Check type="checkbox" label="Check me out" />
+                          <Form.Check type="checkbox" label="Accept" />
                         </Form.Group>
                         <Button variant="outline-primary w-100" type="submit">
                           Submit

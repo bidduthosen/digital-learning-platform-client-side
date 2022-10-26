@@ -1,4 +1,11 @@
 .courser-cart{
-    align-items: center;
-    background-color: rgb(255 255 255 / 28%)!important
+    background-color: rgb(255 255 255 / 28%)!important;
+    box-shadow: 10px 10px 8px 10px #88888875;
+    
+    border: 2px solid blue;
+}
+.courser-cart-img{
+    display: flex;
+   justify-content: center;
+
 }

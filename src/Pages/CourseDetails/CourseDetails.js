@@ -7,7 +7,7 @@ const CourseDetails = () => {
     console.log(allCourse)
     return (
         <div>
-            <h1>{allCourse.name}</h1>
+            <h1>{allCourse.course_name}</h1>
             <Image src={allCourse.picture}></Image>
             <p>{allCourse.about}</p>
             <p>{allCourse.author.name}</p>

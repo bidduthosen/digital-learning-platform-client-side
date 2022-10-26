@@ -10,9 +10,10 @@ const Main = () => {
         <div style={{background: 'rgba(27, 41, 80, 0.05)'}}>
             <Header></Header>
             <SkillDevelop></SkillDevelop>
+            <hr />
             <Container>
                 <Row>
-                    <Col lg='3 bg-success bg-opacity-25'>
+                    <Col lg='3'>
                         <LeftSiteNav></LeftSiteNav>
                     </Col>
                     <Col lg='9'><Outlet></Outlet></Col>
