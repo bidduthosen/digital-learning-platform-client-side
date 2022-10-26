@@ -6,7 +6,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { FaGoogle, FaFacebook } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider';
 import LoginBanner from '../../LoginBanner/LoginBanner';
 import './Login.css';
@@ -18,6 +18,7 @@ const Login = () => {
     const googleProvider = new GoogleAuthProvider();
     const [userError, setUserError] = useState('');
     const [accepted, setAccepted] = useState(false);
+    const navigate = useNavigate();
 
     const handleSignPassword = (event) =>{
         event.preventDefault()
@@ -30,6 +31,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
+                navigate('/');
             })
             .catch((error)=>{
                 console.error(error);
@@ -49,7 +51,7 @@ const Login = () => {
     const handleAcceptTerms = event =>{
         setAccepted(event.target.checked)
       }
-      
+
     return (
         <Container>
             <Row>
