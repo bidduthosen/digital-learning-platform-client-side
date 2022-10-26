@@ -6,6 +6,7 @@ import Courses from "../../Pages/Courses/Courses";
 import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
 import Premium from "../../Pages/Premium/Premium";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -36,7 +37,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/premium',
-                element: <Premium></Premium>
+                element: <PrivateRoute><Premium></Premium></PrivateRoute>
             }
         ]
     },

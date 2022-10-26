@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
-import { FaLaptopCode, FaUser, FaUserCircle } from 'react-icons/fa';
+import { FaLaptopCode, FaUser } from 'react-icons/fa';
 import './Header.css';
 import { AuthContext } from '../../../Context/AuthProvider';
 
@@ -28,7 +28,7 @@ const Header = () => {
                   <Link className='me-2 nav-link' to="/course"> FAQ</Link>
                   <Link className='me-2 nav-link' to="/blog">Blog</Link>
                 </Nav>
-                <Nav>
+                <Nav className='d-flex justify-content-between align-items-center'>
                 {/* user login information */}
                     {user?.uid ? 
                     <>
@@ -44,11 +44,18 @@ const Header = () => {
                     </>
                     :
                     <>
-                        <Link to='/login' className='me-3 d-flex align-items-center'><FaUserCircle style={{fontSize: "31px", color: "black"}}/></Link>
-                        <Link  to='/login' className='me-2'><Button variant="outline-dark">Login</Button></Link>
-                        <Link  to='/register' className='me-2'><Button variant="outline-dark">Register</Button></Link>
+                    <Nav className='d-flex justify-content-between align-items-center'>
+                        <Link  to='/login' className='m-1'><Button variant="outline-dark">Login</Button></Link>
+                        <Link  to='/register' className='m-1'><Button variant="outline-dark">Register</Button></Link>
+                    </Nav>
                     </>
                     }
+                    <div className='my-2 ms-2'>
+                        <label className="switch">
+                          <input type="checkbox"/>
+                          <span className="slider round"></span>
+                        </label>
+                    </div>
                 </Nav>
               </Navbar.Collapse>
             </Container>
