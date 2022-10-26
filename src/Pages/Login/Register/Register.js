@@ -62,7 +62,7 @@ const Register = () => {
                 </Form.Group>
                 <small className='text-danger'>{userError}</small>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                  <Form.Check type="checkbox" label={<>Accept <Link>Terms & Conditions</Link></>} />
+                  <Form.Check onClick={handleAcceptTerms} type="checkbox" label={<>Accept <Link>Terms & Conditions</Link></>} />
                 </Form.Group>
                 <Button variant="primary" type="submit" disabled={!accepted}>
                   Submit

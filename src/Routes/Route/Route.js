@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Link } from "react-router-dom";
 import Main from "../../layouts/Main";
 import Blog from "../../Pages/Blog/Blog";
 import CourseDetails from "../../Pages/CourseDetails/CourseDetails";
@@ -37,6 +37,6 @@ export const router = createBrowserRouter([
     },
     {
         path: '*',
-        element: <div>Not found 404:</div>
+        element: <div>Not found 404: <Link to='/'>Back to home</Link> </div>
     }
 ]);

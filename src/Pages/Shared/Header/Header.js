@@ -33,13 +33,6 @@ const Header = () => {
                     {user?.uid ? 
                     <>
                     <Nav className='d-flex justify-content-between align-items-center'>
-                        <div className='me-2 text-primary'>
-                            {user?.displayName ? 
-                            <>{user?.displayName}</> 
-                            : 
-                            <><div style={{fontSize: "20px"}}>Unknown Person</div></>}
-                        </div>
-
                         <Link  className='me-3'>
                             {user?.photoURL ? <Image className='m-1' style={{height: '35px'}} roundedCircle src={user?.photoURL}></Image>
                               :
