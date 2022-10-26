@@ -1,15 +1,29 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React from 'react';
+import { useContext } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { FaGoogle, FaFacebook } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Context/AuthProvider';
 import LoginBanner from '../../LoginBanner/LoginBanner';
 import './Login.css';
 
 
 
 const Login = () => {
+    const {SignIinGoogle} = useContext(AuthContext);
+    const googleProvider = new GoogleAuthProvider();
+
+    const handleSignInGoogle = () =>{
+        SignIinGoogle(googleProvider)
+            .then((result)=>{
+                const user = result.user;
+                console.log(user);
+            })
+            .catch((error)=> console.error(error))
+    }
     return (
         <Container>
             <Row>
@@ -41,7 +55,7 @@ const Login = () => {
                     <div className=" mb-5">
                             <p className='text-center'>Or sign in with</p>
                         <div className='text-center'>
-                        <Button variant="outline-success m-2 px-2" ><FaGoogle/> Login Via Google</Button>
+                        <Button onClick={handleSignInGoogle} variant="outline-success m-2 px-2" ><FaGoogle/> Login Via Google</Button>
                         <Button variant="outline-dark px-2"><FaFacebook/> Login Via Facebook</Button>
 
                         </div>
