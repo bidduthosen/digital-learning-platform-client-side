@@ -1,5 +1,6 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React from 'react';
+import { useState } from 'react';
 import { useContext } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
@@ -13,8 +14,28 @@ import './Login.css';
 
 
 const Login = () => {
-    const {SignIinGoogle} = useContext(AuthContext);
+    const {signInPassword, SignIinGoogle} = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
+    const [userError, setUserError] = useState('');
+    const [accepted, setAccepted] = useState(false);
+
+    const handleSignPassword = (event) =>{
+        event.preventDefault()
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        signInPassword(email, password)
+            .then((result)=>{
+                const user = result.user;
+                console.log(user);
+                form.reset();
+            })
+            .catch((error)=>{
+                console.error(error);
+                setUserError(error.message)
+            })
+    }
 
     const handleSignInGoogle = () =>{
         SignIinGoogle(googleProvider)
@@ -23,7 +44,12 @@ const Login = () => {
                 console.log(user);
             })
             .catch((error)=> console.error(error))
-    }
+    };
+
+    const handleAcceptTerms = event =>{
+        setAccepted(event.target.checked)
+      }
+      
     return (
         <Container>
             <Row>
@@ -32,7 +58,7 @@ const Login = () => {
                 </Col>
                 <Col md='6' style={{boxShadow: "rgb(136 136 136 / 46%) 0px -1px 4px 1px"}}>
                     <h3 className='my-3 fs-bold fst-italic'>Sign In Your Account</h3>
-                    <Form>
+                    <Form onSubmit={handleSignPassword}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                           <Form.Label>Email address</Form.Label>
                           <Form.Control type="email" name='email' placeholder="Enter email" required/>
@@ -42,10 +68,11 @@ const Login = () => {
                           <Form.Label>Password</Form.Label>
                           <Form.Control type="password" name='password' placeholder="Password" required/>
                         </Form.Group>
+                        <small className='text-danger'>{userError}</small>
                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                          <Form.Check type="checkbox" label="Accept" />
+                          <Form.Check onClick={handleAcceptTerms} type="checkbox" label={<>Accept <Link>Terms & Conditions</Link></>}/>
                         </Form.Group>
-                        <Button variant="outline-primary w-100" type="submit">
+                        <Button variant="outline-primary w-100" type="submit" disabled={!accepted}>
                           Submit
                         </Button>
                     </Form>

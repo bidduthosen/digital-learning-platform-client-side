@@ -9,7 +9,14 @@ import './Header.css';
 import { AuthContext } from '../../../Context/AuthProvider';
 
 const Header = () => {
-    const {user} = useContext(AuthContext);
+    const {user, logOut} = useContext(AuthContext);
+
+
+    const handleLogout = ()=>{
+        logOut()
+            .then(()=>{})
+            .catch((error)=>console.error(error))
+    }
     return (
         <Navbar collapseOnSelect expand="lg" style={{background: "#ebd6a6"}} variant="white mb-4">
             <Container>
@@ -22,7 +29,7 @@ const Header = () => {
                   <Link className='me-2 nav-link' to="/blog">Blog</Link>
                 </Nav>
                 <Nav>
-                {/* user information */}
+                {/* user login information */}
                     {user?.uid ? 
                     <>
                     <Nav className='d-flex justify-content-between align-items-center'>
@@ -39,7 +46,7 @@ const Header = () => {
                               <FaUser className='m-2' style={{fontSize: "31px"}}/>
                               }
                         </Link>
-                        <Link  to='/login' className='me-2'><Button variant="outline-dark">LogOut</Button></Link>
+                        <Link onClick={handleLogout} to='/login' className='me-2'><Button variant="outline-dark">LogOut</Button></Link>
                     </Nav>
                     </>
                     :
