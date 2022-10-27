@@ -13,6 +13,11 @@ const Premium = () => {
     const courseInfo = useLoaderData();
     const { lesson, course_free, class_time, course_name, picture} = courseInfo ;
 
+
+    const handleAdmission = (event)=>{
+        event.preventDefault()
+    }
+
     return (
        <Container className='mt-3'>
         <h3 className='text-info'>Admission From</h3>
@@ -42,7 +47,7 @@ const Premium = () => {
                           <Form.Control type="text" placeholder="address" />
                         </Form.Group>
                         <div className='m-2'>
-                            <h4 className='m-2 text-primary'>Prement Options</h4>
+                            <h4 className='m-2 text-primary'>Payment Options</h4>
                             <Form.Group className="mb-3" controlId="formBasicCheckbox">
                                 <Form.Check type="checkbox" label="Bkash" />
                                 </Form.Group>
@@ -59,7 +64,7 @@ const Premium = () => {
                                 <Form.Control as="textarea" placeholder="Leave a comment here" />
                             </FloatingLabel>
                         </div>
-                        <Button variant="primary my-2" type="submit">
+                        <Button onClick={handleAdmission} variant="primary my-2" type="submit">
                           Submit
                         </Button>
                     </Form>
