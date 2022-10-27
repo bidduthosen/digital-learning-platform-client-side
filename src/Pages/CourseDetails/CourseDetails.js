@@ -30,7 +30,7 @@ const CourseDetails = () => {
                                 <h6><FaBook></FaBook> {lesson}</h6>
                                 <h6><FaRegClock></FaRegClock> {class_time}</h6>
                                 <h6>{course_free}</h6>
-                        </div>
+                            </div>
                         </Col>
                     </Row>
                 </Card.Header>

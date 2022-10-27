@@ -25,17 +25,17 @@ const Blog = () => {
                         
                     When developing a React Application with Authentication, we might require public and private routes. Let's first see what they are?
                         
-                    <h5>Public Routes</h5>
+                    <strong>Public Routes</strong>
                     Public routes are Log in, SignUp, Forgot Password, Reset Password. In simple words, These routes can be accessed before login into the App.
                         
-                    <h5>Private Routes</h5>
+                    <strong>Private Routes</strong>
                     Private Routes vary based on the Apps, For example, Dashboard, User Profile, App Settings, Home etc. In simple words, These routes can be accessed only after login.
                         
                     The constraints for Public and Private routes are that Public routes should not be accessed after login and Private routes should not be accessible before login.
                         
                     In this article, we can see. How to create public and private routes using react-router for your react apps. Let's start
                         
-                    <h5>Public Routes</h5>
+                    <strong>Public Routes</strong>
                     First, let us create a PublicRoute.js component to handle public route conditions as below</p>
                 </div>
                 <div>

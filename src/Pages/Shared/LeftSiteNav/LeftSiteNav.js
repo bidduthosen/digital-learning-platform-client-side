@@ -13,7 +13,7 @@ const LeftSiteNav = () => {
     }, [])
 
     return (
-        <div className='py-3 d-none d-md-block border border-primary'>
+        <div className='py-3 d-none d-md-block'>
             <h3 style={{textAlign: 'center', paddingBottom: '15px',}}>Course List</h3>
             {
                 courses?.map(course=> <p 

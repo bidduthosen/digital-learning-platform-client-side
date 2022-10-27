@@ -13,7 +13,7 @@ const Main = () => {
             <hr />
             <Container>
                 <Row>
-                    <Col lg='3'>
+                    <Col lg='3' style={{background: '#f0f0f0', boxShadow: "15px 15px 25px 0px #88888875"}}>
                         <LeftSiteNav></LeftSiteNav>
                     </Col>
                     <Col lg='9'><Outlet></Outlet></Col>
