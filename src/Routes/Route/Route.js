@@ -1,10 +1,11 @@
-import { createBrowserRouter, Link } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layouts/Main";
 import Blog from "../../Pages/Blog/Blog";
 import CourseDetails from "../../Pages/CourseDetails/CourseDetails";
 import Courses from "../../Pages/Courses/Courses";
 import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
+import NotFound from "../../Pages/NotFound/NotFound";
 import Premium from "../../Pages/Premium/Premium";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
@@ -44,6 +45,6 @@ export const router = createBrowserRouter([
     },
     {
         path: '*',
-        element: <div>Not found 404: <Link to='/'>Back to home</Link> </div>
+        element: <NotFound></NotFound>
     }
 ]);

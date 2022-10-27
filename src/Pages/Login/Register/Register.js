@@ -9,7 +9,7 @@ import { AuthContext } from '../../../Context/AuthProvider';
 
 const Register = () => {
 
-    const {createPassword} = useContext(AuthContext);
+    const {createPassword, updateUserProfile} = useContext(AuthContext);
     const [userError, setUserError] = useState('');
     const [accepted, setAccepted] = useState(false);
 
@@ -20,18 +20,28 @@ const Register = () => {
         const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, photoURL, email, password);
+        setUserError('')
 
         createPassword(email, password)
             .then((result)=>{
                 const user = result.user;
                 console.log(user);
                 form.reset();
+                handleUpdateUserProfile(name, photoURL);
             })
             .catch((error)=>{
                 console.error(error);
                 setUserError(error.message)
             })
+    }
+    const handleUpdateUserProfile = (name, photoURL) =>{
+        const profile ={
+          displayName: name,
+          photoURL: photoURL,
+        }
+        updateUserProfile(profile)
+            .then(()=>{})
+            .catch((error)=>console.error(error))
     }
 
     const handleAcceptTerms = event =>{

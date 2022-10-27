@@ -9,7 +9,7 @@ import './Premium';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 
 const Premium = () => {
-    const user = useContext(AuthContext);
+    const {user} = useContext(AuthContext);
     const courseInfo = useLoaderData();
     const { lesson, course_free, class_time, course_name, picture} = courseInfo ;
 
@@ -26,6 +26,10 @@ const Premium = () => {
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                           <Form.Label>Email address</Form.Label>
                           <Form.Control type="email" defaultValue={user?.email} placeholder="Enter email" />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicPhoto">
+                          <Form.Label>Photo URL</Form.Label>
+                          <Form.Control type="text" defaultValue={user?.photoURL} placeholder="Photo Url" />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicNumber">
