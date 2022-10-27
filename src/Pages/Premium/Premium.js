@@ -5,6 +5,8 @@ import Form from 'react-bootstrap/Form';
 import { FaBook, FaRegClock } from 'react-icons/fa';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
+import './Premium';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
 
 const Premium = () => {
     const user = useContext(AuthContext);
@@ -13,6 +15,7 @@ const Premium = () => {
 
     return (
        <Container className='mt-3'>
+        <h3 className='text-info'>Admission From</h3>
             <Row>
                 <Col md='7'>
                     <Form>
@@ -34,6 +37,24 @@ const Premium = () => {
                           <Form.Label>Permanent address</Form.Label>
                           <Form.Control type="text" placeholder="address" />
                         </Form.Group>
+                        <div className='m-2'>
+                            <h4 className='m-2 text-primary'>Prement Options</h4>
+                            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                                <Form.Check type="checkbox" label="Bkash" />
+                                </Form.Group>
+                            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                                <Form.Check type="checkbox" label="Pay-pal" />
+                                </Form.Group>
+                            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                                <Form.Check type="checkbox" label="Roket" />
+                            </Form.Group>
+                        </div>
+                        <div className='m-2'>
+                            <FloatingLabel
+                                controlId="floatingTextarea" label="Comments" className="mb-3">
+                                <Form.Control as="textarea" placeholder="Leave a comment here" />
+                            </FloatingLabel>
+                        </div>
                         <Button variant="primary my-2" type="submit">
                           Submit
                         </Button>
@@ -44,7 +65,7 @@ const Premium = () => {
                         <Card.Header as="h5">
                             <Row>
                                 <div className='text-center'>
-                                    <h3>Course Free: {course_free}</h3>
+                                    <h3 className='text-info'>Course Free: {course_free}</h3>
                                 </div>
                             </Row>
                         </Card.Header>

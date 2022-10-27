@@ -1,6 +1,12 @@
 # Digital Learning Platform
 
-Live website: [Create React App](https://github.com/facebook/create-react-app).
+Live website Link: (https://digital-learning-platfor-43f4a.web.app/).
+
+
+Github Clint site code link: (https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-bidduthosen).
+
+
+Github Server site code link: (https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-bidduthosen).
 
 ## Features..
 
@@ -11,7 +17,7 @@ Live website: [Create React App](https://github.com/facebook/create-react-app).
 ### 5. React bootstrap and Bootstrap used
 ### 6. Private Context Used 
 ### 7. Create a new server and used my site 
-### 8. React icons used.
+### 8. React icons used
 
 ## Learn More
 
